@@ -8,5 +8,9 @@ namespace WebApplication4.Models
 {
     public class ApplicationDBContext : IdentityDbContext
     {
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+             : base(options)
+        {
+        }
     }
 }
