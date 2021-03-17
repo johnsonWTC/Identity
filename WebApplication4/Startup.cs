@@ -33,6 +33,7 @@ namespace WebApplication4
             {
                 options.Password.RequireDigit = true;
                 options.Password.RequiredLength = 5;
+                options.Password.RequireLowercase = true;
             }
             )
 
