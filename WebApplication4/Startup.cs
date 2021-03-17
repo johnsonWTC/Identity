@@ -38,11 +38,6 @@ namespace WebApplication4
             ).AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultTokenProviders();
 
-
-
-
-            services.AddControllers();
-
             services.AddControllers();
         }
 
