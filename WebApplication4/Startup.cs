@@ -8,6 +8,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using WebApplication4.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace WebApplication4
 {
@@ -26,6 +28,16 @@ namespace WebApplication4
             services.AddDbContext<ApplicationDbContext>(options =>
            options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddIdentity<IdentityUser,IdentityRole>(options => 
+            {
+                options.Password.RequireDigit = true;
+            }
+            )
+
+
+
+
             services.AddControllers();
 
             services.AddControllers();
