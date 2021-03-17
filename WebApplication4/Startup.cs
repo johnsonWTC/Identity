@@ -29,13 +29,14 @@ namespace WebApplication4
            options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddIdentity<IdentityUser,IdentityRole>(options => 
-            {
-                options.Password.RequireDigit = true;
-                options.Password.RequiredLength = 5;
-                options.Password.RequireLowercase = true;
-            }
-            )
+            services.AddIdentity<IdentityUser, IdentityRole>(options =>
+             {
+                 options.Password.RequireDigit = true;
+                 options.Password.RequiredLength = 5;
+                 options.Password.RequireLowercase = true;
+             }
+            ).AddEntityFrameworkStores<ApplicationDbContext>()
+            .AddDefaultTokenProviders();
 
 
 
