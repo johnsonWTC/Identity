@@ -54,7 +54,7 @@ namespace WebApplication4
                     ValidAudience = "http//",
                     ValidIssuer = "http//",
                     RequireExpirationTime = true,
-                    ValidateIssuerSigningKey = new
+                    
                 }
             }
             )
