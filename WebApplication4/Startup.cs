@@ -11,6 +11,7 @@ using WebApplication4.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 namespace WebApplication4
 {
@@ -54,7 +55,7 @@ namespace WebApplication4
                     ValidAudience = "http//",
                     ValidIssuer = "http//",
                     RequireExpirationTime = true,
-                    IssuerSigningKey = 
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding)
                     
                 }
             }
