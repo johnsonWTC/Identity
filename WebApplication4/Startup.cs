@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using WebApplication4.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace WebApplication4
 {
@@ -37,6 +38,28 @@ namespace WebApplication4
              }
             ).AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultTokenProviders();
+
+            services.AddAuthentication(auth =>
+            {
+            auth.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                auth.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+
+
+            }).AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidAudience = "http//",
+                    ValidIssuer = "http//",
+                    RequireExpirationTime = true,
+                    ValidateIssuerSigningKey
+                }
+            }
+            )
+           
+            ) ;
 
             services.AddControllers();
         }
