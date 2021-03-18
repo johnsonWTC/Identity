@@ -56,7 +56,8 @@ namespace WebApplication4
                     ValidAudience = "http//",
                     ValidIssuer = "http//",
                     RequireExpirationTime = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("This is the key that we will use in the encryption"))
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("This is the key that we will use in the encryption")),
+                    ValidateIssuerSigningKey = true
                     
                 }
             }
