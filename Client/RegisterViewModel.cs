@@ -8,5 +8,6 @@ namespace Client
 {
     class RegisterViewModel
     {
+        public string Email { get; set; }
     }
 }
