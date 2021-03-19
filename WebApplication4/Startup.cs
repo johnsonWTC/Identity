@@ -58,12 +58,9 @@ namespace WebApplication4
                     RequireExpirationTime = true,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("This is the key that we will use in the encryption")),
                     ValidateIssuerSigningKey = true
-                    
-                }
-            }
-            )
-           
-            ) ;
+
+                };
+            }) ;
 
             services.AddControllers();
         }
