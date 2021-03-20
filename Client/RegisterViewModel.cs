@@ -10,6 +10,7 @@ namespace Client
     class RegisterViewModel
     {
         [Required]
+        [StringLength(50)]
         public string Email { get; set; }
         public string Password { get; set; }
         public string ConfirmPassWord { get; set; }
