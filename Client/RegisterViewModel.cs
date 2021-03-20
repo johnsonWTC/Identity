@@ -15,7 +15,7 @@ namespace Client
         public string Email { get; set; }
 
         [Required]
-        [StringLength]
+        [StringLength(50,MinimumLength =5)]
         public string Password { get; set; }
         public string ConfirmPassWord { get; set; }
     }
