@@ -13,6 +13,8 @@ namespace Client
         [StringLength(50)]
         [EmailAddress]
         public string Email { get; set; }
+
+        [Required]
         public string Password { get; set; }
         public string ConfirmPassWord { get; set; }
     }
