@@ -7,6 +7,7 @@ namespace WebApplication4
 {
     interface IUserService
     {
+        Task<UserMangerRespponse>
     }
 
     public class UserService : IUserService
