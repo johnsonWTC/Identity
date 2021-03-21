@@ -8,5 +8,6 @@ namespace Client
 {
     class UserManangerResponse
     {
+        public string Message  { get; set; }
     }
 }
