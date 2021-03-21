@@ -7,7 +7,7 @@ namespace WebApplication4
 {
     interface IUserService
     {
-        Task<UserManangerResponse> RegisterUserAsync()
+        Task<UserManangerResponse> RegisterUserAsync(RegisterViewModel registerViewModel);
     }
 
     public class UserService : IUserService

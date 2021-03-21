@@ -2288,6 +2288,19 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "SharedClass/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "2.2.0"
+        },
+        "compile": {
+          "bin/placeholder/SharedClass.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SharedClass.dll": {}
+        }
       }
     }
   },
@@ -7621,6 +7634,11 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "SharedClass/1.0.0": {
+      "type": "project",
+      "path": "../SharedClass/SharedClass.csproj",
+      "msbuildProject": "../SharedClass/SharedClass.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -7630,7 +7648,8 @@
       "Microsoft.EntityFrameworkCore >= 3.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 3.0.0",
       "Microsoft.EntityFrameworkCore.Relational >= 3.0.0",
-      "Microsoft.EntityFrameworkCore.SqlServer >= 3.0.0"
+      "Microsoft.EntityFrameworkCore.SqlServer >= 3.0.0",
+      "SharedClass >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -7666,7 +7685,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\jdubula\\Desktop\\IdentityWebAPI\\SharedClass\\SharedClass.csproj": {
+              "projectPath": "C:\\Users\\jdubula\\Desktop\\IdentityWebAPI\\SharedClass\\SharedClass.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
