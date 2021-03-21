@@ -9,5 +9,6 @@ namespace Client
     class UserManangerResponse
     {
         public string Message  { get; set; }
+        public bool isSuccess { get; set; }
     }
 }
