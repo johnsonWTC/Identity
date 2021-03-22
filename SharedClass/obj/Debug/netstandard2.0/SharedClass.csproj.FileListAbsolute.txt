@@ -2,6 +2,7 @@ C:\Users\jdubula\Desktop\IdentityWebAPI\SharedClass\bin\Debug\netstandard2.0\Sha
 C:\Users\jdubula\Desktop\IdentityWebAPI\SharedClass\bin\Debug\netstandard2.0\SharedClass.deps.json
 C:\Users\jdubula\Desktop\IdentityWebAPI\SharedClass\bin\Debug\netstandard2.0\SharedClass.dll
 C:\Users\jdubula\Desktop\IdentityWebAPI\SharedClass\bin\Debug\netstandard2.0\SharedClass.pdb
+C:\Users\jdubula\Desktop\IdentityWebAPI\SharedClass\obj\Debug\netstandard2.0\SharedClass.csprojAssemblyReference.cache
 C:\Users\jdubula\Desktop\IdentityWebAPI\SharedClass\obj\Debug\netstandard2.0\SharedClass.dll.config
 C:\Users\jdubula\Desktop\IdentityWebAPI\SharedClass\obj\Debug\netstandard2.0\SharedClass.AssemblyInfoInputs.cache
 C:\Users\jdubula\Desktop\IdentityWebAPI\SharedClass\obj\Debug\netstandard2.0\SharedClass.AssemblyInfo.cs
