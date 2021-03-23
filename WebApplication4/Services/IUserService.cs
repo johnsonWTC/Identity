@@ -29,12 +29,15 @@ namespace WebApplication4
             }
 
             if(registerViewModel.Password != registerViewModel.ConfirmPassWord)
-            {
-                return new UserManangerResponse
-                {
+                return new UserManangerResponse 
+                { 
                     Message = "Comfirm password does not match password",
-                }
-            }
+                    isSuccess = false,
+                };
+
+            var identityUser = new IdentityUser
+
+
         }
     }
 }
