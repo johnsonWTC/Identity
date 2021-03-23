@@ -43,7 +43,11 @@ namespace WebApplication4
 
             if (result.Succeeded)
             {
-                return new 
+                return new UserManangerResponse
+                {
+                    Message = "user created successfully",
+                    isSuccess = true,
+                };
             }
         }
     }
