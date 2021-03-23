@@ -21,7 +21,7 @@ namespace WebApplication4
         {
             userMananger = userManager;
         }
-        public Task<UserManangerResponse> RegisterUserAsync(RegisterViewModel registerViewModel)
+        public async Task<UserManangerResponse> RegisterUserAsync(RegisterViewModel registerViewModel)
         {
             if (registerViewModel == null) 
             {
@@ -35,9 +35,16 @@ namespace WebApplication4
                     isSuccess = false,
                 };
 
-            var identityUser = new IdentityUser
+            var identityUser = new IdentityUser();
+            identityUser.Email = registerViewModel.Email;
+            identityUser.UserName = registerViewModel.Email;
 
+            var result = await userMananger.CreateAsync(identityUser, registerViewModel.Password);
 
+            if (result.Succeeded)
+            {
+                return new 
+            }
         }
     }
 }
