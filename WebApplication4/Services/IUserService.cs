@@ -32,7 +32,7 @@ namespace WebApplication4
             {
                 return new UserManangerResponse
                 {
-                    Message = "Comfirm pass"
+                    Message = "Comfirm password does not match password",
                 }
             }
         }
