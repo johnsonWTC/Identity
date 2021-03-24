@@ -51,6 +51,9 @@ namespace WebApplication4
             }
 
             return new UserManangerResponse
+            {
+                Message = "user was not created"
+            }
         }
     }
 }
