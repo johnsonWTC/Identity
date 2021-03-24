@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SharedClass
 {
-    class RegisterViewModel
+   public class RegisterViewModel
     {
         [Required]
         [StringLength(50)]

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SharedClass
 {
-    class UserManangerResponse
+  public  class UserManangerResponse
     {
         public string Message  { get; set; }
         public bool isSuccess { get; set; }

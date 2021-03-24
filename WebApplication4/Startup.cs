@@ -62,6 +62,8 @@ namespace WebApplication4
                 };
             }) ;
 
+            services.AddScoped < IUserService, IUserService >();
+
             services.AddControllers();
         }
 

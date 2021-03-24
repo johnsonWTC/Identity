@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace WebApplication4
 {
-    interface IUserService
+   public interface IUserService
     {
-        Task<UserManangerResponse> RegisterUserAsync(RegisterViewModel registerViewModel);
+     public   Task<UserManangerResponse> RegisterUserAsync(RegisterViewModel registerViewModel);
     }
 
     public class UserService : IUserService
@@ -22,18 +22,21 @@ namespace WebApplication4
             userMananger = userManager;
         }
         public async Task<UserManangerResponse> RegisterUserAsync(RegisterViewModel registerViewModel)
-        {
+         {
             if (registerViewModel == null) 
             {
                 throw new NullReferenceException("Register Model is null");
             }
 
             if(registerViewModel.Password != registerViewModel.ConfirmPassWord)
+            {
+
                 return new UserManangerResponse 
                 { 
                     Message = "Comfirm password does not match password",
                     isSuccess = false,
                 };
+            }
 
             var identityUser = new IdentityUser();
             identityUser.Email = registerViewModel.Email;
@@ -54,8 +57,8 @@ namespace WebApplication4
             {
                 Message = "user was not created",
                 Errors = result.Errors.Select(a => a.Description),
-                isSuccess = false;
-            }
+                isSuccess = false,
+            };
         }
     }
 }
