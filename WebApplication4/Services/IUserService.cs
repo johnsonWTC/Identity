@@ -52,7 +52,9 @@ namespace WebApplication4
 
             return new UserManangerResponse
             {
-                Message = "user was not created"
+                Message = "user was not created",
+                Errors = result.Errors.Select(a => a.Description),
+                isSuccess = false;
             }
         }
     }
