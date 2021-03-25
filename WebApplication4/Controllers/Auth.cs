@@ -15,7 +15,10 @@ namespace WebApplication4.Controllers
 
         public async Task<IActionResult> RegisterAsync ([FromBody]RegisterViewModel registerViewModel)
         {
+            if (ModelState.IsValid)
+            {
 
+            }
         }
     }
 }
