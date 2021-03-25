@@ -16,6 +16,7 @@ namespace WebApplication4.Controllers
 
         public Auth(IUserService userService)
         {
+            
             _userService = userService;
         }
 
@@ -24,6 +25,10 @@ namespace WebApplication4.Controllers
             if (ModelState.IsValid)
             {
                 var register = await _userService.RegisterUserAsync(registerViewModel);
+                if (register.isSuccess)
+                {
+                    return Ok(register);
+                }
             }
         }
     }
