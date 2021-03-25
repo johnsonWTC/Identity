@@ -31,6 +31,7 @@ namespace WebApplication4.Controllers
                 }
                 return BadRequest("some properties are imvalid");
             }
+            return BadRequest("some properties are imvalid");
         }
     }
 }
