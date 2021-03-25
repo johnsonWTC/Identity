@@ -12,6 +12,7 @@ namespace WebApplication4.Controllers
     [ApiController]
     public class Auth : ControllerBase
     {
+        private IUserService userService;
 
         public async Task<IActionResult> RegisterAsync ([FromBody]RegisterViewModel registerViewModel)
         {
