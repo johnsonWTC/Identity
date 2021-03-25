@@ -29,6 +29,7 @@ namespace WebApplication4.Controllers
                 {
                     return Ok(register);
                 }
+                return BadRequest("some properties are imvalid");
             }
         }
     }
