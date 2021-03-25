@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SharedClass;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,9 @@ namespace WebApplication4.Controllers
     public class Auth : ControllerBase
     {
 
-        public async Task<IActionResult> RegisterAsync (RegisterViewModel registerViewModel)
+        public async Task<IActionResult> RegisterAsync ([FromBody]RegisterViewModel registerViewModel)
+        {
+
+        }
     }
 }
