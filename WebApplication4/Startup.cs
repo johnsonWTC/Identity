@@ -53,10 +53,10 @@ namespace WebApplication4
                 {
                     ValidateIssuer = true,
                     ValidateAudience = true,
-                    ValidAudience = "http//",
+                    ValidAudience = Configuration["AuthSettings:Audience"],
                     ValidIssuer = "http//",
                     RequireExpirationTime = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("This is the key that we will use in the encryption")),
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes()),
                     ValidateIssuerSigningKey = true
 
                 };
@@ -78,6 +78,8 @@ namespace WebApplication4
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
