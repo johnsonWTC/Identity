@@ -54,9 +54,9 @@ namespace WebApplication4
                     ValidateIssuer = true,
                     ValidateAudience = true,
                     ValidAudience = Configuration["AuthSettings:Audience"],
-                    ValidIssuer = "http//",
+                    ValidIssuer = Configuration["AuthSettings:Issuer"],
                     RequireExpirationTime = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes()),
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["AuthSettings:key"])),
                     ValidateIssuerSigningKey = true
 
                 };
