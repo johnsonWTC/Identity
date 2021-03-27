@@ -1,5 +1,6 @@
 ﻿
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
 using SharedClass;
 using System;
 using System.Collections.Generic;
@@ -19,10 +20,12 @@ namespace WebApplication4
     public class UserService : IUserService
     {
         private UserManager<IdentityUser> userMananger;
+        private IConfiguration _configaration;
          
-        public UserService(UserManager<IdentityUser> userManager)
+        public UserService(UserManager<IdentityUser> userManager, IConfiguration configaration)
         {
             userMananger = userManager;
+            _configaration = configaration;
         }
 
         public async Task<UserManangerResponse> LoginUserAsync(LoginViewModel loginViewModel)
