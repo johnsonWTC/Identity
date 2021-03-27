@@ -76,7 +76,7 @@ namespace WebApplication4
             return new UserManangerResponse
             {
                 Message = tokenAsstring,
-                isSuccess = false,
+                isSuccess = true,
             };
         }
 
