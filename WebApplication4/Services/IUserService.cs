@@ -37,6 +37,14 @@ namespace WebApplication4
             };
 
             var result = await userMananger.CheckPasswordAsync(user, loginViewModel.Password);
+            if (result == false)
+            {
+                return new UserManangerResponse
+                {
+                    Message = "Wrong password",
+                    isSuccess = false,
+                };
+            };
 
 
 
