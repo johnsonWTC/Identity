@@ -23,6 +23,12 @@ namespace WebApplication4
         {
             userMananger = userManager;
         }
+
+        public Task<UserManangerResponse> LoginUserAsync(LoginViewModel loginViewModel)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<UserManangerResponse> RegisterUserAsync(RegisterViewModel registerViewModel)
          {
             if (registerViewModel == null) 
