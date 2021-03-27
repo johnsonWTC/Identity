@@ -70,7 +70,14 @@ namespace WebApplication4
                signingCredentials :new SigningCredentials(key, SecurityAlgorithms.HmacSha256) );
 
 
-            var tokenAskstring = new JwtSecurityTokenHandler().WriteToken(token);
+            var tokenAsstring = new JwtSecurityTokenHandler().WriteToken(token);
+
+
+            return new UserManangerResponse
+            {
+                Message = tokenAsstring,
+                isSuccess = false,
+            };
         }
 
         public async Task<UserManangerResponse> RegisterUserAsync(RegisterViewModel registerViewModel)
