@@ -1,11 +1,14 @@
 ﻿
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 using SharedClass;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace WebApplication4
@@ -56,7 +59,11 @@ namespace WebApplication4
                 new Claim(ClaimTypes.NameIdentifier, user.Id),
             };
 
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configaration["AuthSettings:key"]));
 
+
+            var token = new JwtSecurityToken(
+                );
         }
 
         public async Task<UserManangerResponse> RegisterUserAsync(RegisterViewModel registerViewModel)
