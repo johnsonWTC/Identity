@@ -63,7 +63,14 @@ namespace WebApplication4
 
 
             var token = new JwtSecurityToken(
-                );
+               issuer: _configaration["AuthSettings:Issuer"],
+               audience: _configaration["AuthSettings:audience"],
+               claims : claims,
+               expires :DateTime.Now.AddDays(30),   
+               signingCredentials :new SigningCredentials(key, SecurityAlgorithms.HmacSha256) );
+
+
+            var tokenAskstring = new JwtSecurityTokenHandler().WriteToken(token);
         }
 
         public async Task<UserManangerResponse> RegisterUserAsync(RegisterViewModel registerViewModel)
