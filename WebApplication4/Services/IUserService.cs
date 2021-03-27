@@ -4,6 +4,7 @@ using SharedClass;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace WebApplication4
@@ -46,6 +47,11 @@ namespace WebApplication4
                 };
             };
 
+            var claims = new[]
+            {
+                new Claim(ClaimTypes.Email, loginViewModel.Email),
+                new Claim(ClaimTypes.NameIdentifier, user.Id),
+            };
 
 
         }
