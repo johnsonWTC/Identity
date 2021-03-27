@@ -31,9 +31,15 @@ namespace WebApplication4
             {
                 return new UserManangerResponse
                 {
+                    Message = "There is no user with that email adress",
+                    isSuccess = false,
+                };
+            };
 
-                }
-            }
+            var result = await userMananger.CheckPasswordAsync(user, loginViewModel.Password);
+
+
+
         }
 
         public async Task<UserManangerResponse> RegisterUserAsync(RegisterViewModel registerViewModel)
