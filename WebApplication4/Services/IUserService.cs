@@ -11,6 +11,8 @@ namespace WebApplication4
    public interface IUserService
     {
      public   Task<UserManangerResponse> RegisterUserAsync(RegisterViewModel registerViewModel);
+     public   Task<UserManangerResponse> LoginUserAsync(LoginViewModel registerViewModel);
+        
     }
 
     public class UserService : IUserService
@@ -60,5 +62,8 @@ namespace WebApplication4
                 isSuccess = false,
             };
         }
+
+
+
     }
 }
