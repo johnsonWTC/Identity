@@ -24,9 +24,16 @@ namespace WebApplication4
             userMananger = userManager;
         }
 
-        public Task<UserManangerResponse> LoginUserAsync(LoginViewModel loginViewModel)
+        public async Task<UserManangerResponse> LoginUserAsync(LoginViewModel loginViewModel)
         {
-            throw new NotImplementedException();
+            var user = await userMananger.FindByEmailAsync(loginViewModel.Email);
+            if(user == null)
+            {
+                return new UserManangerResponse
+                {
+
+                }
+            }
         }
 
         public async Task<UserManangerResponse> RegisterUserAsync(RegisterViewModel registerViewModel)
