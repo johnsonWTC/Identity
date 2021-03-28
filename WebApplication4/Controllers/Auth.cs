@@ -33,5 +33,8 @@ namespace WebApplication4.Controllers
             }
             return BadRequest("some properties are imvalid");
         }
+
+
+        public async Task<IActionResult> LoginAsync([FromBody] RegisterViewModel registerViewModel)
     }
 }

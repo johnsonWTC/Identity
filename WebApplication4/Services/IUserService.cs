@@ -77,7 +77,7 @@ namespace WebApplication4
             {
                 Message = tokenAsstring,
                 isSuccess = true,
-                Expiringdate = DateTime.Now.AddDays(30),
+                Expiringdate = token.ValidTo,
             };
         }
 
