@@ -39,10 +39,10 @@ namespace WebApplication4.Controllers
         {
             if (ModelState.IsValid)
             {
-                var register = await _userService.LoginUserAsync(loginViewModel);
-                if (register.isSuccess)
+                var login = await _userService.LoginUserAsync(loginViewModel);
+                if (login.isSuccess)
                 {
-                    return Ok(register);
+                    return Ok(login);
                 }
                 return BadRequest("some properties are imvalid");
             }
