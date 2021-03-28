@@ -19,7 +19,7 @@ namespace WebApplication4.Controllers
             
             _userService = userService;
         }
-
+        [HttpPost("Register")]
         public async Task<IActionResult> RegisterAsync ([FromBody]RegisterViewModel registerViewModel)
         {
             if (ModelState.IsValid)
@@ -34,7 +34,19 @@ namespace WebApplication4.Controllers
             return BadRequest("some properties are imvalid");
         }
 
-
+        [HttpPost("Login")]
         public async Task<IActionResult> LoginAsync([FromBody] RegisterViewModel registerViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var register = await _userService.RegisterUserAsync(registerViewModel);
+                if (register.isSuccess)
+                {
+                    return Ok(register);
+                }
+                return BadRequest("some properties are imvalid");
+            }
+            return BadRequest("some properties are imvalid");
+        }
     }
 }
