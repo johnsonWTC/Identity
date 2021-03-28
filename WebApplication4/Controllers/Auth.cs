@@ -35,11 +35,11 @@ namespace WebApplication4.Controllers
         }
 
         [HttpPost("Login")]
-        public async Task<IActionResult> LoginAsync([FromBody] RegisterViewModel registerViewModel)
+        public async Task<IActionResult> LoginAsync([FromBody] LoginViewModel loginViewModel)
         {
             if (ModelState.IsValid)
             {
-                var register = await _userService.RegisterUserAsync(registerViewModel);
+                var register = await _userService.LoginUserAsync(loginViewModel);
                 if (register.isSuccess)
                 {
                     return Ok(register);
