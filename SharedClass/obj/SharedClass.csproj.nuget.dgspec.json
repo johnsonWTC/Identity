@@ -66,6 +66,10 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "SendGrid.SmtpApi": {
+              "target": "Package",
+              "version": "[1.3.9, )"
             }
           },
           "imports": [
