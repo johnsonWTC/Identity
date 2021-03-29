@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
+using SendGrid;
+using SendGrid.Helpers.Mail;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,16 +24,13 @@ namespace WebApplication4.Services
 
 
 
-        public Task SendEmailAsync(string toEmail, string subject, string content)
+        public  async Task SendEmailAsync(string toEmail, string subject, string content)
         {
             var apiKey = _configaration["SendGripkey"];
             var client = new SendGridClient(apiKey);
-            var from = new EmailAddress("test@example.com", "Example User");
-            var subject = "Sending with SendGrid is Fun";
+            var from = new EmailAddress("test@bluewe.com", "Bluewe");
             var to = new EmailAddress("test@example.com", "Example User");
-            var plainTextContent = "and easy to do anywhere, even with C#";
-            var htmlContent = "<strong>and easy to do anywhere, even with C#</strong>";
-            var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
+            var msg = MailHelper.CreateSingleEmail(from, to, subject, content, content);
             var response = await client.SendEmailAsync(msg);
         }
     }
