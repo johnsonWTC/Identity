@@ -10,5 +10,8 @@ namespace WebApplication4.Services
         Task SendEmailAsync(string toEmail, string subject, string content);
     }
 
-    public class SendGridMailService :
+    public class SendGridMailService : IMailService
+    {
+
+    }
 }
