@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using WebApplication4.Services;
 
 namespace WebApplication4
 {
@@ -63,6 +64,7 @@ namespace WebApplication4
             }) ;
 
             services.AddScoped <IUserService, UserService>();
+            services.AddTransient<IMailService, SendGridMailService>();
 
             services.AddControllers();
         }
