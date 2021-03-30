@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace WebApplication4.Services
 {
-    interface IMailService
+   public  interface IMailService
     {
         Task SendEmailAsync(string toEmail, string subject, string content);
     }
@@ -28,7 +28,7 @@ namespace WebApplication4.Services
         {
             var apiKey = _configaration["SendGripkey"];
             var client = new SendGridClient(apiKey);
-            var from = new EmailAddress("test@bluewe.com", "Bluewe");
+            var from = new EmailAddress("test@testMail.com", "Test Mail");
             var to = new EmailAddress("test@example.com", "Example User");
             var msg = MailHelper.CreateSingleEmail(from, to, subject, content, content);
             var response = await client.SendEmailAsync(msg);

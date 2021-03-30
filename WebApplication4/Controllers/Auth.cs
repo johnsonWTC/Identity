@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApplication4.Services;
 
 namespace WebApplication4.Controllers
 {
@@ -13,11 +14,13 @@ namespace WebApplication4.Controllers
     public class Auth : ControllerBase
     {
         private IUserService _userService;
+        private IMailService _mailService;
 
-        public Auth(IUserService userService)
+        public Auth(IUserService userService, IMailService mailService)
         {
             
             _userService = userService;
+            _mailService = mailService;
         }
         [HttpPost("Register")]
         public async Task<IActionResult> RegisterAsync ([FromBody]RegisterViewModel registerViewModel)
@@ -42,6 +45,7 @@ namespace WebApplication4.Controllers
                 var login = await _userService.LoginUserAsync(loginViewModel);
                 if (login.isSuccess)
                 {
+                    await _mailService.SendEmailAsync(loginViewModel.Email, "new login", "new new new");
                     return Ok(login);
                 }
                 return BadRequest("some properties are imvalid");
