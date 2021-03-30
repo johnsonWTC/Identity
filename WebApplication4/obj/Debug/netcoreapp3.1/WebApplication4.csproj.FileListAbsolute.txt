@@ -49,3 +49,6 @@ C:\Users\jdubula\Desktop\IdentityWebAPI\WebApplication4\obj\Debug\netcoreapp3.1\
 C:\Users\jdubula\Desktop\IdentityWebAPI\WebApplication4\obj\Debug\netcoreapp3.1\WebApplication4.dll
 C:\Users\jdubula\Desktop\IdentityWebAPI\WebApplication4\obj\Debug\netcoreapp3.1\WebApplication4.pdb
 C:\Users\jdubula\Desktop\IdentityWebAPI\WebApplication4\obj\Debug\netcoreapp3.1\WebApplication4.genruntimeconfig.cache
+C:\Users\jdubula\Desktop\IdentityWebAPI\WebApplication4\bin\Debug\netcoreapp3.1\SendGrid.dll
+C:\Users\jdubula\Desktop\IdentityWebAPI\WebApplication4\bin\Debug\netcoreapp3.1\SendGrid.SmtpApi.dll
+C:\Users\jdubula\Desktop\IdentityWebAPI\WebApplication4\bin\Debug\netcoreapp3.1\StarkbankEcdsa.dll
