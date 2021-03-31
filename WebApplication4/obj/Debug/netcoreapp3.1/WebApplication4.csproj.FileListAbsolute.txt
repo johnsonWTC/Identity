@@ -52,3 +52,6 @@ C:\Users\jdubula\Desktop\IdentityWebAPI\WebApplication4\obj\Debug\netcoreapp3.1\
 C:\Users\jdubula\Desktop\IdentityWebAPI\WebApplication4\bin\Debug\netcoreapp3.1\SendGrid.dll
 C:\Users\jdubula\Desktop\IdentityWebAPI\WebApplication4\bin\Debug\netcoreapp3.1\SendGrid.SmtpApi.dll
 C:\Users\jdubula\Desktop\IdentityWebAPI\WebApplication4\bin\Debug\netcoreapp3.1\StarkbankEcdsa.dll
+C:\Users\jdubula\Desktop\IdentityWebAPI\WebApplication4\bin\Debug\netcoreapp3.1\MailKit.dll
+C:\Users\jdubula\Desktop\IdentityWebAPI\WebApplication4\bin\Debug\netcoreapp3.1\MimeKit.dll
+C:\Users\jdubula\Desktop\IdentityWebAPI\WebApplication4\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
