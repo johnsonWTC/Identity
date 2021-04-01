@@ -17,7 +17,7 @@ namespace WebApplication4
     {
      public   Task<UserManangerResponse> RegisterUserAsync(RegisterViewModel registerViewModel);
      public   Task<UserManangerResponse> LoginUserAsync(LoginViewModel loginViewModel);
-     public   Task<UserManangerResponse> LoginUserAsync(LoginViewModel loginViewModel);
+     public   Task<UserManangerResponse> CorfirmEmailAsync(LoginViewModel loginViewModel);
         
     }
 
