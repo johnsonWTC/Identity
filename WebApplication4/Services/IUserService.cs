@@ -113,6 +113,7 @@ namespace WebApplication4
             if (result.Succeeded)
             {
                 var confirmEmailtoken = await userMananger.GenerateEmailConfirmationTokenAsync(identityUser);
+                var ecodedEmailtoken = Encoding.UTF8
                 return new UserManangerResponse
                 {
                     Message = "user created successfully",
