@@ -17,7 +17,7 @@ namespace WebApplication4
     {
      public   Task<UserManangerResponse> RegisterUserAsync(RegisterViewModel registerViewModel);
      public   Task<UserManangerResponse> LoginUserAsync(LoginViewModel loginViewModel);
-     public   Task<UserManangerResponse> CorfirmEmailAsync(LoginViewModel loginViewModel);
+     public   Task<UserManangerResponse> CorfirmEmailAsync(string userID, string tocken);
         
     }
 
@@ -30,6 +30,11 @@ namespace WebApplication4
         {
             userMananger = userManager;
             _configaration = configaration;
+        }
+
+        public  async Task<UserManangerResponse> CorfirmEmailAsync(string userID, string tocken)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task<UserManangerResponse> LoginUserAsync(LoginViewModel loginViewModel)
