@@ -26,6 +26,7 @@ namespace WebApplication4
     {
         private UserManager<IdentityUser> userMananger;
         private IConfiguration _configaration;
+        private IMailService _mailService;
          
         public UserService(UserManager<IdentityUser> userManager, IConfiguration configaration)
         {
@@ -117,7 +118,7 @@ namespace WebApplication4
                 var ecodedEmailtoken = Encoding.UTF8.GetBytes(confirmEmailtoken);
                 var validEmailToken = WebEncoders.Base64UrlEncode(ecodedEmailtoken);
                 
-                string uri 
+                string uri = $"{_configaration["AppURL"]}/api/auth/confirmEmail?userid={identityUser.Id}&token={validEmailToken}";
 
                 string url = _configaration["AppURL"];
 
