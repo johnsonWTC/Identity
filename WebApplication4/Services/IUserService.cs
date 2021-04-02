@@ -1,5 +1,6 @@
 ﻿
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using SharedClass;
@@ -114,6 +115,9 @@ namespace WebApplication4
             {
                 var confirmEmailtoken = await userMananger.GenerateEmailConfirmationTokenAsync(identityUser);
                 var ecodedEmailtoken = Encoding.UTF8.GetBytes(confirmEmailtoken);
+                var validEmailToken = WebEncoders.Base64UrlDecode(ecodedEmailtoken);
+
+
                 return new UserManangerResponse
                 {
                     Message = "user created successfully",
