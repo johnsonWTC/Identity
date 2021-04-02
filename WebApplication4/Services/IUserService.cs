@@ -115,7 +115,7 @@ namespace WebApplication4
             {
                 var confirmEmailtoken = await userMananger.GenerateEmailConfirmationTokenAsync(identityUser);
                 var ecodedEmailtoken = Encoding.UTF8.GetBytes(confirmEmailtoken);
-                var validEmailToken = WebEncoders.Base64UrlDecode(ecodedEmailtoken);
+                var validEmailToken = WebEncoders.Base64UrlEncode(ecodedEmailtoken);
 
 
                 return new UserManangerResponse
