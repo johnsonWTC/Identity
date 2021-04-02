@@ -1,5 +1,4 @@
 ﻿
-using MailKit;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Configuration;
@@ -12,6 +11,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using WebApplication4.Services;
 
 namespace WebApplication4
 {
@@ -28,7 +28,7 @@ namespace WebApplication4
         private UserManager<IdentityUser> userMananger;
         private IConfiguration _configaration;
         private IMailService _mailService;
-         
+
         public UserService(UserManager<IdentityUser> userManager, IConfiguration configaration, IMailService mailService)
         {
             userMananger = userManager;
@@ -120,9 +120,11 @@ namespace WebApplication4
                 var ecodedEmailtoken = Encoding.UTF8.GetBytes(confirmEmailtoken);
                 var validEmailToken = WebEncoders.Base64UrlEncode(ecodedEmailtoken);
                 
-                string uri = $"{_configaration["AppURL"]}/api/auth/confirmEmail?userid={identityUser.Id}&token={validEmailToken}";
+                string url = $"{_configaration["AppURL"]}/api/auth/confirmEmail?userid={identityUser.Id}&token={validEmailToken}";
 
-                string url = _configaration["AppURL"];
+            
+
+                await _mailService.SendEmailAsync(registerViewModel.Email, "new login",$"<a>{url}</a>");
 
 
                 return new UserManangerResponse
