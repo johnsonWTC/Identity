@@ -117,6 +117,8 @@ namespace WebApplication4
                 var ecodedEmailtoken = Encoding.UTF8.GetBytes(confirmEmailtoken);
                 var validEmailToken = WebEncoders.Base64UrlEncode(ecodedEmailtoken);
 
+                string url = _configaration["AppURL"];
+
 
                 return new UserManangerResponse
                 {
