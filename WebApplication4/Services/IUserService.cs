@@ -1,4 +1,5 @@
 ﻿
+using MailKit;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Configuration;
@@ -28,10 +29,11 @@ namespace WebApplication4
         private IConfiguration _configaration;
         private IMailService _mailService;
          
-        public UserService(UserManager<IdentityUser> userManager, IConfiguration configaration)
+        public UserService(UserManager<IdentityUser> userManager, IConfiguration configaration, IMailService mailService)
         {
             userMananger = userManager;
             _configaration = configaration;
+            _mailService = mailService;
         }
 
         public  async Task<UserManangerResponse> CorfirmEmailAsync(string userID, string tocken)
