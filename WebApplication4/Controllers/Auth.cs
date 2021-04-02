@@ -52,5 +52,12 @@ namespace WebApplication4.Controllers
             }
             return BadRequest("some properties are imvalid");
         }
+
+
+        [HttpGet("ConfirmEmail")]
+        public async Task<IActionResult> ConfirmEmail(string userId,string token)
+        {
+
+        }
     }
 }
