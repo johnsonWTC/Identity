@@ -57,7 +57,8 @@ namespace WebApplication4.Controllers
         [HttpGet("ConfirmEmail")]
         public async Task<IActionResult> ConfirmEmail(string userId,string token)
         {
-
+            if (string.IsNullOrWhiteSpace(userId) || string.IsNullOrWhiteSpace(token))
+                return NotFound();
         }
     }
 }
