@@ -59,6 +59,7 @@ namespace WebApplication4.Controllers
         {
             if (string.IsNullOrWhiteSpace(userId) || string.IsNullOrWhiteSpace(token))
                 return NotFound();
+            var result = await _userService.CorfirmEmailAsync(userId, token);
         }
     }
 }
