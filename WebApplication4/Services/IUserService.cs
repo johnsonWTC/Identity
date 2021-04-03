@@ -38,7 +38,7 @@ namespace WebApplication4
 
         public  async Task<UserManangerResponse> CorfirmEmailAsync(string userID, string tocken)
         {
-            throw new NotImplementedException();
+            var user = await userMananger.FindByIdAsync(userID);
         }
 
         public async Task<UserManangerResponse> LoginUserAsync(LoginViewModel loginViewModel)
