@@ -48,6 +48,7 @@ namespace WebApplication4
                 };
             }
             var decodedToken = WebEncoders.Base64UrlDecode(tocken);
+            string normalToken = Encoding.UTF8.GetString(decodedToken);
 
         }
 
