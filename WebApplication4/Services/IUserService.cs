@@ -50,6 +50,13 @@ namespace WebApplication4
             var decodedToken = WebEncoders.Base64UrlDecode(tocken);
             string normalToken = Encoding.UTF8.GetString(decodedToken);
             var result = await userMananger.ConfirmEmailAsync(user, tocken);
+            if (result.Succeeded)
+            {
+                return new UserManangerResponse
+                {
+                    Message = "email confirmation was successful"
+                }
+            }
 
         }
 
