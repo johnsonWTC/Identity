@@ -47,7 +47,7 @@ namespace WebApplication4
                     Message = "user not found",
                 };
             }
-            var decodedToken = 
+            var decodedToken = WebEncoders.Base64UrlDecode(tocken);
 
         }
 
