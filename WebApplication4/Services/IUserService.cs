@@ -39,6 +39,11 @@ namespace WebApplication4
         public  async Task<UserManangerResponse> CorfirmEmailAsync(string userID, string tocken)
         {
             var user = await userMananger.FindByIdAsync(userID);
+            if(user == null)
+            {
+
+            }
+
         }
 
         public async Task<UserManangerResponse> LoginUserAsync(LoginViewModel loginViewModel)
