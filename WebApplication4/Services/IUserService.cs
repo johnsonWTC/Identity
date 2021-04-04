@@ -54,8 +54,17 @@ namespace WebApplication4
             {
                 return new UserManangerResponse
                 {
-                    Message = "email confirmation was successful"
-                }
+                    Message = "email confirmation was successful",
+                    isSuccess = true,
+                };
+            }
+            else
+            {
+                return new UserManangerResponse
+                {
+                    Message = "Fail to confirm",
+                    isSuccess = true,
+                };
             }
 
         }
