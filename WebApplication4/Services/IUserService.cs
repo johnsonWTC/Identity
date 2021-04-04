@@ -43,8 +43,9 @@ namespace WebApplication4
             {
                 return new UserManangerResponse
                 {
-
-                }
+                    isSuccess = false,
+                    Message = "user not found",
+                };
             }
 
         }
