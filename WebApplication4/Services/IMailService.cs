@@ -37,12 +37,12 @@ namespace WebApplication4.Services
             message.From.Add(from);
 
             MailboxAddress to = new MailboxAddress("User",
-            "jdubula@student.wethinkcode.co.za");
+           toEmail);
             message.To.Add(to);
 
-            message.Subject = "This is email subject";
+            message.Subject = "Please conform your email";
             BodyBuilder bodyBuilder = new BodyBuilder();
-            bodyBuilder.TextBody = "Hello World!";
+            bodyBuilder.HtmlBody = content;
 
             message.Body = bodyBuilder.ToMessageBody();
 

@@ -49,7 +49,7 @@ namespace WebApplication4
             }
             var decodedToken = WebEncoders.Base64UrlDecode(tocken);
             string normalToken = Encoding.UTF8.GetString(decodedToken);
-            var result = await userMananger.ConfirmEmailAsync(user, tocken);
+            var result = await userMananger.ConfirmEmailAsync(user, normalToken);
             if (result.Succeeded)
             {
                 return new UserManangerResponse
@@ -63,7 +63,8 @@ namespace WebApplication4
                 return new UserManangerResponse
                 {
                     Message = "Fail to confirm",
-                    isSuccess = true,
+                    isSuccess = false,
+                    Errors = result.Errors.Select(e => e.Description)
                 };
             }
 
@@ -148,11 +149,11 @@ namespace WebApplication4
                 var ecodedEmailtoken = Encoding.UTF8.GetBytes(confirmEmailtoken);
                 var validEmailToken = WebEncoders.Base64UrlEncode(ecodedEmailtoken);
                 
-                string url = $"{_configaration["AppURL"]}/api/auth/confirmEmail?userid={identityUser.Id}&token={validEmailToken}";
+                string url = $"{_configaration["AppURL"]}/api/auth/ConfirmEmail?userid={identityUser.Id}&token={validEmailToken}";
 
             
 
-                await _mailService.SendEmailAsync(registerViewModel.Email, "new login",$"<a>{url}</a>");
+                await _mailService.SendEmailAsync(registerViewModel.Email, "new login",$"<a href={url}>Click here</a>");
 
 
                 return new UserManangerResponse

@@ -63,8 +63,11 @@ namespace WebApplication4.Controllers
 
             if (result.isSuccess)
             {
-
+             
+                return Ok("Confirmation was succesful");
             }
-        }
+
+            return BadRequest(result)
+;        }
     }
 }
