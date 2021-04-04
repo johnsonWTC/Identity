@@ -41,7 +41,10 @@ namespace WebApplication4
             var user = await userMananger.FindByIdAsync(userID);
             if(user == null)
             {
+                return new UserManangerResponse
+                {
 
+                }
             }
 
         }
